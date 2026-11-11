@@ -146,6 +146,31 @@ h2{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(28px,3.6v
   @keyframes rise{to{opacity:1;transform:none}}
 }
 
+/* Proyek */
+.projects{border-top:1px solid var(--line);padding-block:clamp(56px,8vw,104px);scroll-margin-top:28px}
+.proj-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(32px,5vw,56px)}
+.proj-head p{margin:0;max-width:26em;font-size:15.5px;color:var(--muted);text-align:right}
+.proj{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,5vw,72px);align-items:center}
+.proj + .proj{margin-top:clamp(56px,8vw,104px)}
+.proj.flip{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+.proj.flip .proj-text{order:2}
+.kind{margin:0 0 14px;font-size:14.5px;font-weight:600;color:var(--gold-text)}
+.proj h3{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(34px,4.6vw,56px);line-height:1;letter-spacing:-.04em;color:var(--ink)}
+.proj-sub{margin:10px 0 0;font-family:var(--display);font-weight:600;font-size:clamp(17px,1.7vw,20px);color:var(--ink);letter-spacing:-.01em}
+.proj-desc{margin:16px 0 0;font-size:16.5px;color:var(--body);max-width:32em}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:28px 0 0;border-top:1px solid var(--line-strong)}
+.facts div{padding:16px 14px 0 0}
+.facts div + div{padding-left:14px;border-left:1px solid var(--line)}
+.facts b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(19px,1.9vw,24px);line-height:1.15;letter-spacing:-.03em;color:var(--gold-text);white-space:nowrap}
+.facts span{display:block;margin-top:4px;font-size:13.5px;line-height:1.4;color:var(--muted)}
+.proj-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.shot{display:block;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:var(--surface);box-shadow:0 30px 60px -30px rgba(0,0,0,.55);transition:border-color .25s,transform .35s ease}
+.shot-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.shot-bar em{font-style:normal;color:var(--gold-text);font-weight:600;white-space:nowrap}
+.shot img{display:block;width:100%;height:auto;aspect-ratio:16/10}
+.shot:hover{border-color:var(--gold);transform:translateY(-4px)}
+.proj-note{margin:clamp(40px,6vw,64px) 0 0;font-size:13.5px;color:var(--muted);max-width:60em}
+
 /* Kontak */
 .contact-band{border-top:1px solid var(--line);background:var(--bg-2)}
 .contact-in{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:24px 48px;padding-block:clamp(40px,6vw,64px)}
@@ -164,6 +189,10 @@ footer{border-top:1px solid var(--line)}
   .index-head{flex-direction:column;align-items:flex-start}
   .index-head p{text-align:left}
   .contact-in{grid-template-columns:1fr}
+  .proj-head{flex-direction:column;align-items:flex-start}
+  .proj-head p{text-align:left}
+  .proj,.proj.flip{grid-template-columns:1fr}
+  .proj.flip .proj-text{order:0}
 }
 @media (max-width:640px){
   .mark small{display:none}
@@ -175,6 +204,10 @@ footer{border-top:1px solid var(--line)}
   .row{padding-block:22px}
   .row:hover .who,.row:focus-visible .who{transform:none}
   .row:hover,.row:focus-visible{background:none}
+  .facts{grid-template-columns:1fr}
+  .facts div,.facts div + div{display:flex;align-items:baseline;gap:12px;padding:12px 0;border-left:0;border-bottom:1px solid var(--line)}
+  .facts span{margin-top:0}
+  .shot:hover{transform:none}
 }
 </style>
 </head>
@@ -284,6 +317,60 @@ footer{border-top:1px solid var(--line)}
       </a></li>
     </ul>
     <p class="note" data-id="Data kumulatif Februari–23 Oktober 2026. Rp8,94 M adalah nilai kewajiban yang ditangani, bukan total dana kembali." data-en="Cumulative data, February–23 October 2026. IDR 8.94 bn is the value of obligations handled, not total funds recovered.">Data kumulatif Februari–23 Oktober 2026. Rp8,94 M adalah nilai kewajiban yang ditangani, bukan total dana kembali.</p>
+  </section>
+
+  <section class="projects" id="proyek" aria-labelledby="pj-title">
+    <div class="wrap">
+      <div class="proj-head">
+        <h2 id="pj-title" data-id="Aplikasi yang saya bangun" data-en="Applications I built">Aplikasi yang saya bangun</h2>
+        <p data-id="Dirancang dan dibuat mandiri, dari kebutuhan pengguna hingga dipakai. Demo dapat dicoba langsung." data-en="Designed and built independently, from user needs to daily use. Both demos can be tried live.">Dirancang dan dibuat mandiri, dari kebutuhan pengguna hingga dipakai. Demo dapat dicoba langsung.</p>
+      </div>
+
+      <article class="proj">
+        <div class="proj-text">
+          <p class="kind" data-id="Aplikasi operasional · dipakai seluruh divisi" data-en="Operations app · used by every division">Aplikasi operasional · dipakai seluruh divisi</p>
+          <h3>STARLITE</h3>
+          <p class="proj-sub">Vendor Management &amp; E-signing</p>
+          <p class="proj-desc" data-id="Aplikasi terintegrasi untuk seleksi mitra baru, database mitra, monitoring, dokumen, signing fingerprint/Face ID, dan email otomatis." data-en="An integrated application for new-partner selection, partner records, monitoring, documents, fingerprint/Face ID signing, and automated email.">Aplikasi terintegrasi untuk seleksi mitra baru, database mitra, monitoring, dokumen, signing fingerprint/Face ID, dan email otomatis.</p>
+          <div class="facts">
+            <div><b data-id="7+ → 1–2" data-en="7+ → 1–2">7+ → 1–2</b><span data-id="hari hingga full sign lintas divisi" data-en="days to full signing across divisions">hari hingga full sign lintas divisi</span></div>
+            <div><b>10 → 1–2</b><span data-id="menit untuk menyusun email" data-en="minutes to prepare an email">menit untuk menyusun email</span></div>
+            <div><b>Rp0</b><span data-id="biaya lisensi e-signing internal" data-en="internal e-signing licence cost">biaya lisensi e-signing internal</span></div>
+          </div>
+          <div class="proj-cta">
+            <a class="btn primary" href="https://hsanss.github.io/Vendor_Management_Spesialist/demos/starlite.html?v=polish1" target="_blank" rel="noopener"><span data-id="Coba demo STARLITE" data-en="Try the STARLITE demo">Coba demo STARLITE</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="btn" href="https://hsanss.github.io/Vendor_Management_Spesialist/studi-kasus.html" target="_blank" rel="noopener"><span data-id="Baca studi kasus" data-en="Read the case study">Baca studi kasus</span></a>
+          </div>
+        </div>
+        <a class="shot" href="https://hsanss.github.io/Vendor_Management_Spesialist/demos/starlite.html?v=polish1" target="_blank" rel="noopener" aria-label="Buka demo STARLITE">
+          <span class="shot-bar"><span data-id="STARLITE · Dashboard Utama" data-en="STARLITE · Main Dashboard">STARLITE · Dashboard Utama</span><em data-id="Demo interaktif" data-en="Interactive demo">Demo interaktif</em></span>
+          <img src="proyek-starlite.webp" alt="Tampilan Dashboard Utama STARLITE: status take over, migrasi akun, dan ringkasan finansial" width="1600" height="1000" loading="lazy" decoding="async">
+        </a>
+      </article>
+
+      <article class="proj flip">
+        <div class="proj-text">
+          <p class="kind" data-id="Proyek pribadi" data-en="Personal project">Proyek pribadi</p>
+          <h3>SIAP NIKAH</h3>
+          <p class="proj-sub" data-id="Perencanaan acara &amp; kontrol biaya" data-en="Event planning &amp; cost control">Perencanaan acara &amp; kontrol biaya</p>
+          <p class="proj-desc" data-id="Menghubungkan status kandidat vendor, komitmen biaya, pembayaran/refund, lampiran, serta tugas dan PIC. Memperlihatkan perancangan alur kerja dan kontrol operasional yang relevan untuk Vendor Management." data-en="Links vendor candidate status, cost commitments, payments/refunds, attachments, and tasks with owners. Demonstrates workflow and operational-control design relevant to Vendor Management.">Menghubungkan status kandidat vendor, komitmen biaya, pembayaran/refund, lampiran, serta tugas dan PIC. Memperlihatkan perancangan alur kerja dan kontrol operasional yang relevan untuk Vendor Management.</p>
+          <div class="facts">
+            <div><b>14</b><span data-id="kelompok fitur terintegrasi" data-en="integrated feature groups">kelompok fitur terintegrasi</span></div>
+            <div><b data-id="Vendor" data-en="Vendors">Vendor</b><span data-id="kandidat, negosiasi, komitmen biaya" data-en="candidates, negotiation, cost commitments">kandidat, negosiasi, komitmen biaya</span></div>
+            <div><b>PIC</b><span data-id="tugas, tenggat, dan ketergantungan" data-en="tasks, deadlines, and dependencies">tugas, tenggat, dan ketergantungan</span></div>
+          </div>
+          <div class="proj-cta">
+            <a class="btn primary" href="https://hsanss.github.io/Vendor_Management_Spesialist/demos/siap-nikah.html?v=polish1" target="_blank" rel="noopener"><span data-id="Coba demo SIAP NIKAH" data-en="Try the SIAP NIKAH demo">Coba demo SIAP NIKAH</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </div>
+        </div>
+        <a class="shot" href="https://hsanss.github.io/Vendor_Management_Spesialist/demos/siap-nikah.html?v=polish1" target="_blank" rel="noopener" aria-label="Buka demo SIAP NIKAH">
+          <span class="shot-bar"><span>SIAP NIKAH · Dashboard</span><em data-id="Demo interaktif" data-en="Interactive demo">Demo interaktif</em></span>
+          <img src="proyek-siap-nikah.webp" alt="Tampilan Dashboard SIAP NIKAH: anggaran, pembayaran, tamu, dan progres checklist" width="1600" height="1000" loading="lazy" decoding="async">
+        </a>
+      </article>
+
+      <p class="proj-note" data-id="Demo memakai data simulasi dan fitur terpilih. Pengiriman dokumen, tanda tangan final, dan layanan cloud dinonaktifkan; fingerprint/Face ID dan email otomatis berjalan pada aplikasi asli." data-en="Demos use simulated data and selected features. Document delivery, final signing, and cloud services are disabled; fingerprint/Face ID and automated email run in the original application.">Demo memakai data simulasi dan fitur terpilih. Pengiriman dokumen, tanda tangan final, dan layanan cloud dinonaktifkan; fingerprint/Face ID dan email otomatis berjalan pada aplikasi asli.</p>
+    </div>
   </section>
 
   <section class="contact-band" aria-labelledby="ct-title">
